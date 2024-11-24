@@ -19,7 +19,7 @@ public:
     Chapter(std::string chapterTitle, Author chapterAuthor, int chapterNumber)
     : title(chapterTitle), author(chapterAuthor), chapterNumber(chapterNumber) {};
 
-    Chapter(Chapter &other)
+    Chapter(const Chapter &other)
     : title(other.title), author(other.author), chapterNumber(other.chapterNumber) {};
 
     Chapter(Article &article) 

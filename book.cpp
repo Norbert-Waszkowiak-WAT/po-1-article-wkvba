@@ -6,28 +6,29 @@
 #include "author.cpp"
 #include "article.cpp"
 #include "chapter.cpp"
+using namespace std;
 
 class Book
 {
 private:
-    std::string title;
+    string title;
     Author author;
     int publicationYear;
-    std::vector<Chapter>chapters;
+    vector<Chapter>chapters;
 
 public:
     Book()
-    : title(""), author(Author()), publicationYear(2023), chapters() {};
+    : title(""), author(Author()), publicationYear(0), chapters({}) {};
 
-    Book(std::string bookTitle, Author bookAuthor, int year,  const std::vector<Chapter>&bookChapters)
+    Book(const string bookTitle,const Author &bookAuthor, int year,  const vector<Chapter>&bookChapters)
     : title(bookTitle), author(bookAuthor), publicationYear(year), chapters(bookChapters) {};
 
-    void addChapter(Chapter &chapter)
+    void addChapter(const Chapter &chapter)
     {
         chapters.push_back(chapter);
     };
 
-    std::string getTitle()
+    string getTitle()
     {
         return title;
     };
@@ -42,14 +43,9 @@ public:
         return publicationYear;
     };
 
-    std::vector<Chapter> getChapters()
+    vector<Chapter> getChapters()
     {
         return chapters;
-    };
-
-    void displayInfo()
-    {
-        std::cout << "skibidi";
     };
 
 };
